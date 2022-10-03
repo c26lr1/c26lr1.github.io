@@ -3,40 +3,62 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
 	<style type="text/css">
-	body{
-  
- 	 background-image: url("Backgroundlayout.jpeg");
-	
-	 background-position: center;
-  	background-repeat: no-repeat;
-  	background-size: cover;
-  	background-attachment: fixed;
-	}
-	#Regmoon {
-		width: 1435px;
-		height: 1435px;
-		background-image: url("https://www.linkpicture.com/q/RegMoon.jpeg");
-		background-size: contain;
-		background-repeat: no-repeat;
-		position: fixed;
-		left: 0.22%;
-		top: -3.65%;
-	}
-	
+		#background{
+			width: 100%;
+			height: 900px;
+			background-image: url(BackgroundSky.jpeg);
+			background-position: center;
+			background-size: cover;
+			z-index: -1;
+			position: fixed;
 
 
-	 
-	}
-</style>
+
+		}
+		#regmoon{
+			width: 360px;
+			height: 350px;
+			background-image: url(RegMoon.png);
+			background-size: cover;
+			background-position: center;
+			position: relative;
+			top: 200px;
+			z-index: 1;
+
+		}
+
+		body{
+			margin: 0px;
+		}
+
+		#regmountains{
+			width: 100%;
+			height: 300px;
+			background-image: url(RegMountains.png);
+			background-size: cover;
+			background-position: center;
+			position: absolute;
+			top: 500px;
+			z-index: 2;
+
+
+		}
+
+
+	</style>
+	<title></title>
 </head>
 <body>
- <a href="projects.html"><div id="Regmoon">
- </div></a>
-<!-- <a href="projects.html">Projects</a> -->
-<!-- <a href="journal.html">Journal</a> -->
 
+<div id="background">
+	<center>
+<a href="projects.html"><div id="regmoon"></div></a>
+	
+</div>
+<div id="regmountains"></div>
+</center>
 
+</div>
 </body>
 </html>
