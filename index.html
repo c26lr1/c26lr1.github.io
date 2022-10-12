@@ -17,16 +17,30 @@
 
 		}
 		#regmoon{
-			width: 360px;
-			height: 350px;
+			width: 540px;
+			height: 525px;
 			background-image: url(RegMoon.png);
 			background-size: cover;
 			background-position: center;
 			position: relative;
 			top: 200px;
 			z-index: 1;
+			transition: 2s;
 
 		}
+		#regmoon:hover{
+			transition: 2s; 
+			width: 580px;
+			height: 525px;
+			padding-bottom: 40px;
+			background-size: cover;
+			background-position: center;
+			position: relative;
+			top: 100px;
+			z-index: 1;
+
+		}
+		
 
 		body{
 			margin: 0px;
@@ -38,9 +52,49 @@
 			background-image: url(RegMountains.png);
 			background-size: cover;
 			background-position: center;
-			position: absolute;
-			top: 500px;
+			position: fixed;
+			top: 480px;
 			z-index: 2;
+			transition: 2s;
+
+
+		}
+		#regmountains:hover {
+			transition: 2s;
+			height: 300px;
+			width: 100%;
+			background-size: cover;
+			background-position: center;
+			position: fixed;
+			top: 430px;
+			padding-bottom: 80px;
+			z-index: 2;
+
+
+		}
+		#clouds{
+			width: 180px;
+			height: 90px;
+			background-image: url(BiggerClouds.png);
+			background-position: center;
+			background-size: cover;
+			position: fixed;
+			z-index: 3;
+			top: 390px;
+			right: 360px;
+			transition: 2s;
+
+		}
+		#clouds:hover {
+			width: 200px;
+			height: 100px;
+			background-image: url(BiggerClouds.png);
+			background-position: center;
+			background-size: cover;
+			position: absolute;
+			z-index: 3;
+			right: 300px;
+			
 
 
 		}
@@ -52,12 +106,13 @@
 <body>
 
 <div id="background">
-	<center>
+<center>
 <a href="projects.html"><div id="regmoon"></div></a>
 	
 </div>
-<div id="regmountains"></div>
+<a href="journal.html"><div id="regmountains"></div></a>
 </center>
+<a href="Aboutme.html"><div id="clouds"></div></a>
 
 </div>
 </body>
