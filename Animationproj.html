@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+		}
+		#background{
+			width: 100%;
+			height: 900px;
+			background-image: url(https://i.ytimg.com/vi/mWsMj636fH4/maxresdefault.jpg);
+			background-position: center;
+			background-size: cover;
+			position: fixed;
+			z-index: -1;
+
+		}	
+		#keyboard{
+			width: 1030px;
+			height: 300px;
+			background-image: url(Keyboard.png);
+			backround-position: center;
+			background-size: cover;
+			position: fixed;
+			z-index: 0;
+			top: 450px;
+			left: 200px;
+
+		}
+		#animationbox{
+			
+			width: 1003px;
+			height: 72px;
+			z-index: 2;
+			position: fixed;
+			background-position: center;
+			background-size: cover;
+			top: 490px;
+			left: 215px;
+			border-radius: 20px;
+			animation-duration: 43s;
+			animation-name: main;
+			animation-iteration-count: 1;
+		}
+		@keyframes main{
+			0% {	
+			
+			background-image: url(countdown5.png);
+			background-position: center;
+			background-size:cover;
+			}
+			4.65%{
+			background-image: url(countdown4.png);
+			background-position: center;
+			background-size:cover;
+
+			}
+			9.5%{
+			background-image: url(countdown3.png);
+			background-position: center;
+			background-size:cover;
+
+			}
+			13.95%{
+			background-image: url(countdown2.png);
+			background-position: center;
+			background-size:cover;
+
+			}
+			18.6%{
+			background-image: url(countdown1.png);
+			background-position: center;
+			background-size:cover;
+
+			}
+			23.25%{
+			background-image: url(countdown0.png);
+			background-position: center;
+			background-size:cover;
+
+			}
+			25.57%{
+			background-image: url(Bar1.png);
+			background-position: center;
+			background-size: cover;
+
+			}
+			53%{
+			background-image: url(Bar1.png);
+			background-position: center;
+			background-size: cover;
+
+
+			}
+			53.47%{
+			background-image: url(Bar2.png);
+			background-position: center;
+			background-size: cover;
+			}
+			79.70%{
+			background-image: url(Bar2.png);
+			background-position: center;
+			background-size: cover;
+			}
+			80.17%{
+			background-image: url(Bar3.png);
+			background-position: center;
+			background-size: cover;	
+			}
+			100%{
+			background-image: url(Bar3.png);
+			background-position: center;
+			background-size: cover;	
+			}
+
+
+			
+
+
+
+		}
+/*
+12.5 sec per 6 measure, about 2.1 per measure
+11.5 sec per 5.25 measure, about 2.19 per measure
+*/
+
+	</style>
+
+
+</head>
+<body>
+<div id=background></div>
+<audio controls>
+ <source src="Rec1.mp3" type="audio/mpeg">
+</audio>	
+<div id=keyboard></div>
+<div id=animationbox></div>
+
+
+</body>
+</html>
