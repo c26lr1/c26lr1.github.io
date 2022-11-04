@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+
+	<title></title>
+	<style type="text/css">
+	#bimage{
+		background-image: url(DayandNight.png);
+		width: 500px;
+		height: 500px;
+		background-size: cover;
+		background-position: center;
+		position: absolute;
+		left: 469.5px;
+		top: 130px;
+	}
+	#text{
+		font-family: 'Abel', sans-serif;
+		font-size: 50px;
+
+
+	}
+	#day{
+		font-size: 55px;
+		color: #FA5F55;
+
+	}
+	#night{
+		font-size: 55px;
+		color: #004E93;
+	}
+	.boat{
+	background-image: url(boat.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	z-index: 2;
+	position: absolute;
+	height: 60px;
+	width: 60px;
+
+
+
+	}
+	.nothing{
+		width: 1px;
+		height: 1px;
+		background-image: nothing.png;
+		position: absolute;
+
+	}
+	.camel{
+		background-image: url(camel.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: 2;
+		position: absolute;
+		height: 70px;
+		width: 70px;
+
+	}
+	.cloud{
+	background-image: url(stormcloud.png);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 2;
+		position: absolute;
+		height: 60px;
+		width: 60px;
+		opacity: 0.7;
+	
+
+
+	}
+	.birds{
+		background-image: url(birds.png);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 2;
+		position: absolute;
+		height: 95px;
+		width: 95px;
+		transform: rotate(5deg)
+		
+
+
+	}
+	
+
+	</style>
+	
+</head>
+<body>
+	<center><h1><span id="text">Welcome to my <span id="day">Day</span> and <span id="night"> Night</span> Project! Click Parts of the Image!</span></h1></center>
+<div id="bimage"><!-- <div class="birds"></div> --></div>
+
+<script type="text/javascript">
+bimage.addEventListener('click', function makeBoat(event){
+	var boat = document.createElement('div');
+	boat.classList.add("boat");
+	boat.style.position = "absolute";
+	document.body.appendChild(boat);
+	console.log(event.clientX, event.clientY)
+	boat.style.left = event.clientX - 30 + "px";
+	boat.style.top = event.clientY - 30 + "px";
+	
+	// if (event.clientY<526 || event.clientY>610 || event.clientX<708|| event.clientX>965){
+	// 		alert("That boat does not belong there. Please leave it in the water")
+
+	// }
+	if (event.clientY>=526 && event.clientY<=610 && event.clientX>=708 && event.clientX<=955){
+		boat.style.backgroundImage="url(boat.png)"
+	}
+	else if(event.clientX>=474 && event.clientX<=675 && event.clientY>=450 && event.clientY<=613) {
+		boat.classList.add("camel")
+	}
+	else if(event.clientX>=749 && event.clientX<=955 && event.clientY<=287 && event.clientY>=147){
+		boat.classList.add("cloud")
+	}
+	else if(event.clientX>=475 && event.clientX<=726 && event.clientY<=318 && event.clientY>=142){
+		boat.classList.add("birds")
+		boat.style.left=event.clientX-42.5 + "px"
+		boat.style.top=event.clientY-42.5+"px"
+	}
+	else{
+		boat.classList.add("nothing");
+	}
+
+});
+	
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>stars</title>
+	<style type="text/css">
+	#star{
+		width: 200px;
+		height: 200px;
+		background-repeat: no-repeat;
+		background-size:contain;
+		background-image: url(star.jpg);
+		position: absolute;
+
+
+		
+
+	</style>
+	
+</head>
+<body>
+
+<div id="star"></div>
+<script type="text/javascript">
+	
+document.addEventListener("click",function makeStar(event){
+	star.style.left = event.clientX-100+"px";
+	// console.log will record the cordinates in the console
+	star.style.top = event.clientY-100+"px";
+	star.style.backgroundImage="url(http://atlas-content-cdn.pixelsquid.com/stock-images/moon-EKZ2oG6-600.jpg)"
+
+	console.log(event.clientX, event.clientY)
+	if (event.clientX-100>400 && event.clientY-100>400){
+	star.style.backgroundImage="url(star.png)"
+}
+
+
+})
+
+
+</script>
+
+
+
+</body>
+</html>
