@@ -5,23 +5,32 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 	<style type="text/css">
+
+
+
 		body{
 				margin: 0px;
 				background-image: url(Cozy1.png);
 				background-position: :center;
 				background-size: cover;
 			}
+
+
 		#furnace{
+		/*opacity: 0.5;
+		background-color: lightgoldenrodyellow;*/
 		z-index: 2;
 		position: relative;
 		width: 120px;
 		height: 160px;
-		top:390px;
+		top:210px;
 		left: 1220px;
 
 		}
+
+
 		#fire{
-			
+
 			opacity:0;
 			height: 100px;
 			width: 100px;
@@ -29,21 +38,23 @@
 			top: 12px;
 			left: -15px;
 			z-index: 3;
-			transition: 1s;
+			transition-duration: 1s;
 
 		}
+
 		#fire:hover{
-			transition: 1s;
+			
 			z-index: 3;
-			opacity:1;
 			height: 100px;
 			width: 100px;
 			position: relative;
+			opacity: 1;
 			background-image: url(sparks3.gif);
 			background-position: center;
 			background-size: cover;
 			top: 12px;
 			left: -15px;
+			transition-duration: 1s;
 
 
 
@@ -55,15 +66,14 @@
 			font-size: 50px;
 			font-family: 'Abel', sans-serif;
 			position: relative;
-			top: -110px;
 			z-index: 2;
 
 		}
+
 		#surrounding{
 			background-color: ghostwhite;
 			opacity: 0.5;
-			top: -170px;
-			left: 180px;
+			top: 35px;
 			position: relative;
 			height: 60px;
 			width: 1100px;
@@ -71,19 +81,26 @@
 			
 
 		}
+
 		#coffee{
 			opacity: 0.6;
 			background-color: darkcyan;
-			width: 40px;
+			width: 43px;
 			height: 120px;
 			position: relative;
-			top: 310px;
+			top: 540px;
 			left: 740px;
 
+		}
 
-
-
-
+		#steam{
+			opacity: 0.6;
+			background-color: black;
+			width: 35px;
+			height: 80px;
+			position: relative;
+			left: 8px;
+		
 		}
 		
 		
@@ -94,11 +111,64 @@
 	<title></title>
 </head>
 <body>
-<a href="October.html"><div id="furnace"><div id="fire"></div></div></a>
-<div id="txt"><center><strong>JOURNAL PAGE! HOVER AROUND AND USE <a href="key.html">KEY</a>!</strong></center></div>
-<div id="surrounding"></div>
-<div id="cone"><a href="November.html"><div id="coffee"></div></a></div>
+
+	<audio id="crackling" src="crackling.mp3"></audio>
+
+	<div id="txt">
+	<center>
+		
+		<div id="surrounding"><strong>JOURNAL PAGE! HOVER,CLICK HERE, AND USE 
+		<a href="key.html">KEY</a>!</strong>
+		</div>
+	
+</center>
+</div>
 
 
+
+	<a href="November.html">
+		<div id="coffee">
+			<div id="steam"></div>
+	</div>
+	</a>
+
+
+	<div id="furnace">
+		<a href="October.html">
+
+		<div id="fire"></div>
+		</a>
+	
+		</div>
+
+
+<script type="text/javascript">
+	
+	fire.addEventListener('mouseenter', function playaudio(event){
+		// fire.style.backgroundColor='blue'
+		
+		crackling.play();
+
+
+
+	})
+	fire.addEventListener('mouseout', function pauseaudio(event){
+		// fire.style.backgroundColor='blue'
+		
+		crackling.pause();
+	})
+
+	// document.addEventListener(
+	// 	"click", function(){
+	// 		crackling.play()
+	// 	}
+	// 	)
+
+	// document.addEventListener(
+	// 	"click", function(){
+	// 		crackling.pause()
+	// 	}
+	// 	)
+</script>
 </body>
 </html>

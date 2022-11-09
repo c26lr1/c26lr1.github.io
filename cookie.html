@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title></title>
+	<style>
+	.cookie{
+		background-image: url("cookie.png");
+		width: 100px;
+		height: 100px;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+	}	
+
+
+	</style>
+</head>
+<body>
+<!-- <div class="cookie"></div> -->
+<!--  
+1. Listen for the mouse's position on the document
+2. Create a function that makes a div 
+3. position the left of the div  at the mouse's X coordinate and the top at the mouses y
+4. style the divs by adding a class to the cookie divs and adding their style to css -->
+<!--  at  some point we need to style to cookie div by adding a class to the cookie divs and adding style to css
+ big goal: make a cookie everywhere we click -->
+
+<script type="text/javascript">
+	document.addEventListener('click',function makeCookie(event){
+	var cookie = document.createElement('div')
+	cookie.classList.add('cookie')
+	cookie.style.position="absolute";
+	document.body.appendChild(cookie);
+	console.log(event.clientX, event.clientY)
+	cookie.style.left = event.clientX-50+"px";
+	cookie.style.top = event.clientY-50+"px";
+
+
+
+	
+})
+
+</script>
+</body>
+</html>
