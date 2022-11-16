@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+	<title></title>
+<style>
+body{
+
+}
+#text{
+	font-family: 'Abel', sans-serif;
+	font-size: 50px;
+	color: #7C0A02 ;
+}
+#text1{
+	font-family: 'Abel', sans-serif;
+	font-size: 20px;
+	color: #B22222 ;
+
+
+
+
+}
+#violin{
+	color:#ffc107;
+
+
+}
+#showimg{
+	width:110px;
+	height: 50px;
+	top:30px;
+	background-color:blueviolet;
+	opacity:0;
+	position:absolute;
+	left:830px;
+
+
+}
+#violinimg{
+opacity: 0;	
+position:absolute;
+	width:600px;
+	height: 800px;
+	left:200px;
+	top:-0px;
+	background-image:url(violinimg1.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+
+}
+#bow{
+	background-image:url(bow.png);
+	background-position: center;
+	background-size:cover;
+	width:600px;
+	height:100px;
+	position:absolute;
+	opacity: 0;
+}
+#gif{
+	width: 400px;
+	height: 400px;
+	background-image: url('violinplaying.gif');
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	left:850px;
+	top:150px;
+	opacity:0;
+
+}
+#advice{
+	width:400px;
+	height:300px;
+	left:460px;
+	top:200px;
+	position:absolute;
+	opacity:0;
+
+
+
+}
+</style>
+<body>
+	<audio id="violinaudio" src="violinsound.mp3"></audio>
+	<div id="showimg"></div>
+<center><h1><span id=text>I Like to Play the <span id=violin>Violin!</span></span></h1></center>
+<div id=advice><span id=text1>Remember, the violin can only make its sound when the bow is in between the fingerboard (black) and the bridge (beige)</span></div>
+<div id=violinimg></div>
+<div id=gif></div>
+<div id=bow></div>
+<script type="text/javascript">
+	let violinimgvisible=0;
+	let counter=0;
+showimg.addEventListener("click", function reveal(event){
+	counter=counter+1
+	if(counter%2!=0){
+		violinimg.style.opacity="1"
+		violinimgvisible=1;
+		gif.style.opacity="1"
+		advice.style.opacity="1"
+
+
+	}
+	if(counter%2==0){
+		violinimg.style.opacity="0"
+		violinimgvisible=0;
+		bow.style.opacity="0"
+	}
+
+})
+
+violinimg.addEventListener("click",function show(event){
+	if (violinimgvisible==1){
+		bow.style.left=event.clientX-300+"px"
+		bow.style.top=event.clientY-50+"px"
+		bow.style.opacity="100%"
+		console.log(event.clientX,event.clientY)
+
+	}
+	if(event.clientX>=276 && event.clientX<=554 && event.clientY>=491 && event.clientY<=554){
+
+		violinaudio.play()
+	}
+
+})
+
+
+
+
+</script>
+</body>
+</html>

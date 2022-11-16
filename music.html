@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title></title>
+	<style type="text/css">
+		#box{
+			height:500px;
+			width:700px;
+			background-color:darkcyan;
+			background-image:url(Recordimg.png);
+			background-size:cover;
+			background-position:center;
+
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<audio id="intermusic" src="Interstellar.mp3" ></audio>
+	<!-- Our Strategy for doing idfferent thing on every-other-click:
+	1.Count the clicks and store them in a variable
+	2. if the click is even then do one thing,
+	3. if the click is odd then do another thing -->
+<center><div id=box></div></center>
+
+
+<script type="text/javascript">
+let counter=0;
+box.addEventListener("click",function music(){
+	 counter=counter+1
+	console.log(counter)
+	if (counter%2==0){
+		box.style.backgroundImage=("url(Recordimg.png")
+		intermusic.pause()
+
+	}
+	if(counter%2!=0){
+		box.style.backgroundImage=("url(Record.gif)")
+		intermusic.play()
+	}
+
+
+
+
+
+
+
+})
+
+
+</script>
+</body>
+</html>

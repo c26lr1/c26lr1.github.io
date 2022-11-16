@@ -83,8 +83,8 @@
 		}
 
 		#coffee{
-			opacity: 0.6;
-			background-color: darkcyan;
+			/*opacity: 0.6;
+			background-color: darkcyan;*/
 			width: 43px;
 			height: 120px;
 			position: relative;
@@ -94,12 +94,32 @@
 		}
 
 		#steam{
-			opacity: 0.6;
-			background-color: black;
-			width: 35px;
-			height: 80px;
+		/*	opacity: 0.6;
+			background-color: black;*/
+			opacity: 0;
+			width: 50px;
+			height: 90px;
 			position: relative;
-			left: 8px;
+			left: 1px;
+			top: -5px;
+			transform: rotate(-10deg);
+			transition-duration: 2s;
+		
+		}
+		#steam:hover{
+
+			/*opcaity: 0.6;
+			background-color: black;*/
+			transition-duration: 2s;
+			width: 50px;
+			height: 90px;
+			position: relative;
+			top: -5px;
+			left: 1px;
+			opacity: 1;
+			background-image: url(coffee1.gif);
+			background-position: center;
+			background-size: cover;
 		
 		}
 		
@@ -113,12 +133,13 @@
 <body>
 
 	<audio id="crackling" src="crackling.mp3"></audio>
+	<audio id="coffee1" src="coffee1.mp3"></audio>
 
-	<div id="txt">
+<div id="txt">
 	<center>
 		
-		<div id="surrounding"><strong>JOURNAL PAGE! HOVER,CLICK HERE, AND USE 
-		<a href="key.html">KEY</a>!</strong>
+		<div id="surrounding"><strong>JOURNAL PAGE! CLICK HERE, USE THIS
+		<a href="key.html">KEY</a> FIRST!</strong>
 		</div>
 	
 </center>
@@ -126,11 +147,13 @@
 
 
 
-	<a href="November.html">
-		<div id="coffee">
+	
+	<div id="coffee">
+		<a href="November.html">
 			<div id="steam"></div>
+		</a>
 	</div>
-	</a>
+	
 
 
 	<div id="furnace">
@@ -156,6 +179,18 @@
 		// fire.style.backgroundColor='blue'
 		
 		crackling.pause();
+	})
+
+	steam.addEventListener('mouseenter', function playaudio1(event){
+		
+		coffee1.play();
+
+
+
+	})
+	steam.addEventListener('mouseout', function pauseaudio1(event){
+		
+		coffee1.pause();
 	})
 
 	// document.addEventListener(
