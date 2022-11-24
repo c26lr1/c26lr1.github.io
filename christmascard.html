@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Rampart+One&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+	
+	body{
+		margin:0px;
+
+	}
+	section {
+    	height: 100%;
+    	margin: 0;
+    	width: 75%;
+    	margin-left: auto;
+    	margin-right: auto;
+   		min-height: 100vh;
+   	 	position: relative;
+   	 	padding-top: 1em;
+}
+	.section-container {
+   		background-size: cover;
+	}
+	#christmas{
+		background-color:rgb(150, 0, 0,0.85);
+		z-index:1;
+		
+	}
+	#christmastree{
+		z-index:3;
+    	width: 700px;
+   	 	height:750px;
+   		position: absolute;
+
+   		top: -2vh;
+  		left:-10%;
+}
+	#title{
+		font-size: 5em;
+		left:32%;
+		font-family: 'Rampart One', cursive;
+		margin:0px;
+		display:inline;
+		position:absolute;
+		z-index:4;
+
+
+
+	}
+	#santa{
+		opacity:0;
+	z-index:4;
+	width:320px;
+	height:500px;
+	left:-16%;
+	top:30vh;
+	position: absolute;
+	}
+	#presentred{
+		opacity:0;
+	width:170px;
+	height: 220px;
+	position:absolute;
+	top:65vh;
+	left:66%;
+		z-index:5;
+
+
+	}
+	#presentblue{
+		opacity: 0;
+	width:120px;
+	height: 220px;
+	position: absolute;
+	left:52%;
+	top:65vh;
+		z-index:5;
+
+
+	}
+	#presentorange{
+		opacity:0;
+	width:125px;
+	height: 145px;
+	position: absolute;
+	top:75vh;
+	left:40%;
+	z-index:5;
+	}
+	@media only screen and (max-width: 600px){
+		#title{
+			font-size: 2.6em;
+			left:-8.5%;
+			width:370px;
+			left:5vw;
+		}
+	
+		#christmas{
+			background-color:skyblue;
+			height: 100vh;
+			width:100vw;
+
+		}
+		#christmastree{
+			width: 430px;
+			height:520px;
+			left:10vw;
+			top:10vh;
+
+
+		}
+		#santa{
+			height:50vh;
+			width:45vw;
+			left:-13vw;
+		}
+		#presentred{
+			height:22vh;
+			width:22vw;
+			left:60vw;
+			top:75vh;
+		}
+		#presentblue{
+			height:28vh;
+			width:20vw;
+			left:20vw;
+			top:69vh;
+			
+		}
+		#presentorange{
+			width:17vw;
+			height:17vh;
+			left:40vw;
+			top:79vh;
+
+		}
+
+
+	}
+	</style>
+</head>
+<body>
+<audio id='music' src='christmasmusic.mp3'></audio>
+
+<div id='christmas' class='section-container'>
+
+<section>
+	<h1 id='title'>メリークリスマス!</h1>
+<img id="christmastree" src="christmastree.gif">
+<img id='santa' src="santa.png">
+<img id='presentred' src="presentred.png">
+<img id='presentorange' src="presentorange.png">
+<img id='presentblue' src="presentblue.png">
+
+ 
+ 
+
+
+
+</section>
+
+</div>
+
+
+
+<script type="text/javascript">
+let santavisible=0;
+let presentvisible=0;
+let counter=0;
+christmastree.addEventListener("click",function appear(event){
+	counter=counter+1
+	if(counter%2!=0){
+		santa.style.opacity="1"
+		presentvisible=1;
+		santavisible=1;
+		presentred.style.opacity="1"
+		presentblue.style.opacity="1"
+		presentorange.style.opacity="1"
+
+
+	}
+	if(counter%2==0){
+		santa.style.opacity="0"
+		presentvisible=0;
+		santavisible=1;
+		presentred.style.opacity="0"
+		presentblue.style.opacity="0"
+		presentorange.style.opacity="0"
+		
+	}
+
+
+	})
+ let santacounter=0;
+santa.addEventListener("click", function santaplaymusic(event){
+	santacounter=santacounter+1
+	if(presentvisible==1 && santacounter%2!=0){
+		music.play()
+	}
+	if(presentvisible==1 && santacounter%2==0){
+		music.pause()
+	}
+
+
+
+})
+</script>
+</body>
+</html>
