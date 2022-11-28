@@ -33,12 +33,12 @@
 	}
 	#christmastree{
 		z-index:3;
-    	width: 700px;
-   	 	height:750px;
+    	width: 410px;
+   	 	height:700px;
    		position: absolute;
 
    		top: -2vh;
-  		left:-10%;
+  		left:3%;
 }
 	#title{
 		font-size: 5em;
@@ -91,25 +91,46 @@
 	top:75vh;
 	left:40%;
 	z-index:5;
+
 	}
-	@media only screen and (max-width: 600px){
-		#title{
-			font-size: 2.6em;
-			left:-8.5%;
-			width:370px;
-			left:5vw;
+	#description{
+		font-family: 'Rampart One', cursive;
+		font-size:2em;
+		top:15%;
+		left:50%;
+		position:absolute;
+		z-index:4;
+		margin:0px;
 		}
-	
+	@media only screen and (max-width: 600px){
+		section{
+			height:100vh;
+			width:75vw;
+		}
+
+		#title{
+			font-size: 2em;
+		
+			width:80vw;
+			left:-3vw;
+		}
+		#description{
+			font-size:1.3em;
+			padding-top:5.5px;
+
+    		top: 6.5%;
+    		left: 13vw;
+		}
 		#christmas{
 			background-color:rgb(150, 0, 0,0.85);
-			height: 130vh;
-   			 width: 129%;
+			height: 100vh;
+   			 width: 100vw;
 
 		}
 		#christmastree{
-			width: 430px;
-			height:520px;
-			left:10vw;
+			width: 70vw;
+			height:70vh;
+			left:0vw;
 			top:10vh;
 
 
@@ -141,6 +162,7 @@
 		}
 
 
+
 	}
 	</style>
 </head>
@@ -149,15 +171,16 @@
 
 <div id='christmas' class='section-container'>
 <section>
-	<h1 id='title'>メリークリスマス!</h1>
+	<center><h1 id='title'>メリークリスマス!</h1></center>
+	<center><div id='description'>ばあばに、涼央から</div></center>
 	<img id="christmastree" src="christmastree.gif">
 	<img id='santa' src="santa.png">
 	<img id='presentred' src="presentred.png">
 	<img id='presentorange' src="presentorange.png">
 	<img id='presentblue' src="presentblue.png">
 </section>
-
 </div>
+<div></div> 
 
 
 
