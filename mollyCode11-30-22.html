@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+		
+		.box{
+            width:200px;
+            height:200px;
+            display:inline-block;
+            margin:10px;
+            background-repeat:no-repeat;
+            border:1px;
+            background-size:cover;
+            border:1px solid black;
+        }
+	</style>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		function makeSquare (i) {
+
+            var square = document.createElement('div');
+                        document.body.appendChild(square);
+                        square.classList.add("box")
+            square.style.backgroundPosition = "center";
+            square.id="square"+i;
+
+        }
+
+        for (var i=0; i<24; i=i+2){
+            	makeSquare(i)
+            }
+
+
+function makeBlue (x){
+
+		var whatever = document.getElementById("square"+x);
+		whatever.style.backgroundColor =    "rgb(0,0," + 10*x +")"
+
+
+}
+
+
+document.addEventListener("keydown", function blue(event){
+	if(event.key=="b"){
+		for (var i=0; i<24; i=i+2){makeBlue(i)}
+	}
+})
+            
+	</script>
+
+</body>
+</html>

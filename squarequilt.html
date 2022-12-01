@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box{
+            width:150px;
+            height:150px;
+            display:inline-block;
+            margin:10px;
+            background-repeat:no-repeat;
+            border:1px;
+            background-size:cover;
+            border:1px solid black;
+
+        }
+        h1{
+            font-family:courier;
+            font-size:2em;
+            color:darkgrey;
+        }
+
+        p{
+            font-family: courier;
+            font-size:1em;
+            color:darkcyan;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1> Square Quilt <h1>
+
+
+<p> <!-- If you'd like a description, feel free to put in your description here! Add your styling above in the curly brackets after "p" above --> WELCOME TO MY SQUARE QUILT! FASHION YOUR QUILT BY PRESSING b,r,g,t,p,y,o to get gradients of blue, red, green, teal, purple, yellow, and orange!<p>
+
+
+<script type="text/javascript">
+
+//For all of your media, to use this, label each file  with numbers (eg.1.jpg, 2.jpg) and keep them in the same folder as this html file. If they are not jpgs, change the extension "jpg" in the recipe below (line 25) to whatever file type they are.  
+
+    
+        function makeSquare (i) {
+
+            var square = document.createElement('div');
+                        document.body.appendChild(square);
+                        square.classList.add("box")
+            square.style.backgroundPosition = "center";
+            square.id="square"+i;
+
+        }
+
+        for (var i=0; i<48; i=i+2){
+                makeSquare(i)
+            }
+
+
+function makeBlue (x){
+
+        var whatever = document.getElementById("square"+x);
+        whatever.style.backgroundColor =    "rgb(0,0," + 6*x +")"
+        whatever.style.transition="1s"
+}
+function makeTeal (x){
+
+        var whatever = document.getElementById("square"+x);
+        whatever.style.backgroundColor =    "rgb(0,"+6*x+","+6*x+")"
+        whatever.style.transition="1s"
+}
+function makeOrange (x){
+
+        var whatever = document.getElementById("square"+x);
+        whatever.style.backgroundColor =    "rgb("+6*x+","+4*0.647*x+","+0*x+"0)"
+        whatever.style.transition="1s"
+}
+function makeYellow (x){
+
+        var whatever = document.getElementById("square"+x);
+        whatever.style.backgroundColor =    "rgb("+6*x+","+6*0.647*x+","+0*x+"0)"
+        whatever.style.transition="1s"
+}
+function makeRed (x){
+
+        var whatever = document.getElementById("square"+x);
+        whatever.style.backgroundColor = "rgb("+6*x+",0,0)"
+        whatever.style.transition="1s"
+
+}
+function makePurple (x){
+        var whatever = document.getElementById("square"+x);
+        whatever.style.backgroundColor = "rgb("+ 6*0.627*x+","+6*0.125*x+","+ 6*0.941*x +")"
+        whatever.style.transition="1s"
+
+}
+function makeGreen (x){
+
+        var whatever = document.getElementById("square"+x);
+        whatever.style.backgroundColor = "rgb(0,"+6*x+",0)"
+        whatever.style.transition="1s"
+
+}
+function makeWhite(x){
+    var whatever = document.getElementById("square"+x);
+    whatever.style.backgroundColor =    "rgb(225,225,225)"
+    whatever.style.transition="1s"
+}
+
+
+document.addEventListener("keydown", function blue(event){
+    if(event.key=="b"){
+        for (var i=0; i<48; i=i+2){makeBlue(i)}
+    }
+})
+document.addEventListener("keydown", function red(event){
+    if(event.key=="r"){
+        for (var i=0; i<48; i=i+2){makeRed(i)}
+    }
+})
+document.addEventListener("keydown", function green(event){
+    if(event.key=="g"){
+        for (var i=0; i<48; i=i+2){makeGreen(i)}
+    }
+})
+document.addEventListener("keydown", function yellow(event){
+    if(event.key=="y"){
+        for (var i=0; i<48; i=i+2){makeYellow(i)}
+    }
+})
+document.addEventListener("keydown", function teal(event){
+    if(event.key=="t"){
+        for (var i=0; i<48; i=i+2){makeTeal(i)}
+    }
+})
+document.addEventListener("keydown", function purple(event){
+    if(event.key=="p"){
+        for (var i=0; i<48; i=i+2){makePurple(i)}
+    }
+})
+document.addEventListener("keydown", function orange(event){
+    if(event.key=="o"){
+        for (var i=0; i<48; i=i+2){makeOrange(i)}
+    }
+})
+document.addEventListener("keyup", function revert(event){
+    if(event.key=="b"|| event.key=="r"||event.key=="g"|| event.key=="t" || event.key=="p"|| event.key=="y"|| event.key=="o"){
+        for (var i=0; i<48; i=i+2){
+            makeWhite(i)
+        }
+    }
+})
+         
+//Below, is the for loop in which where the squares are actually made. This for loop is where the function above is actually called. It is called 14 times, (between the values of 0 and 15) and because the variable i is declared in the for loop and is then being passed to the makeSquare recipe, each time the function runs, i changes in value (+1). Thus, the attributes that involve the i change in value as well (eg. the id attribute changes to be whatever i was last time, plus 1.)//
+
+</script>
+</body>
+</html>
