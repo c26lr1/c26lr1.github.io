@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<style type="text/css">
-	
+	html{scroll-behavior: smooth;}
 	body{
 		margin:0px;
 
@@ -102,6 +102,9 @@
 		z-index:4;
 		margin:0px;
 		}
+	#newyear{
+		background-color:blue;
+	}
 	@media only screen and (max-width: 600px){
 		section{
 			height:100vh;
@@ -176,11 +179,18 @@
 	<img id="christmastree" src="christmastree.gif">
 	<img id='santa' src="santa.png">
 	<img id='presentred' src="presentred.png">
-	<img id='presentorange' src="presentorange.png">
+	<a href='#newyear'><img id='presentorange' src="presentorange.png"></a>
 	<img id='presentblue' src="presentblue.png">
 </section>
 </div>
-<div></div> 
+
+<div id='newyear' class='section-container'>
+	<section>
+
+
+	</section>
+	
+</div> 
 
 
 
@@ -221,6 +231,9 @@ santa.addEventListener("click", function santaplaymusic(event){
 	if(presentvisible==1 && santacounter%2==0){
 		music.pause()
 	}
+newyear.addEventListener('touchstart',function(){
+	newyear.style.backgroundColor='green'
+})
 
 
 

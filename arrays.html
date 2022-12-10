@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	#box{
+		position:absolute;
+	}
+	.square{
+		height: 100px;
+		width: 100px;
+		
+	}
+	.circle{
+		height: 100px;
+		width: 100px;
+border-radius: 50%;		
+
+	}
+	.rectangle {
+  width: 200px;
+  height: 100px;
+  background: orange;
+}
+
+    .oval {
+      width: 200px;
+      height: 100px;
+
+      border-radius: 100px / 50px;
+    }
+
+      .triangle {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid red;
+      background-color: #ff000000;
+    }
+  
+    
+     
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+    }
+    .heart:before,
+    .heart:after {
+      position: absolute;
+      content: "";
+      left: 50px;
+      top: 0;
+      width: 50px;
+      height: 80px;
+      background: red;
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+    .heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+    
+
+</style>
+	<title></title>
+</head>
+<body>
+<div id="box"></div>
+
+<script type="text/javascript">
+	var shape=["square","triangle","circle","rectangle","oval","heart"]
+		
+
+	var color=["red","green","blue","yellow","orange","cyan","teal","purple","skyblue","cadetblue","seagreen","maroon","darkorange","magenta"]
+
+
+
+	document.addEventListener("click", function click(event){
+	document.getElementById("box").classList.remove("square");
+	document.getElementById("box").classList.remove("circle");
+	document.getElementById("box").classList.remove("triangle");
+	document.getElementById("box").classList.remove("rectangle");
+	document.getElementById("box").classList.remove("oval");
+	document.getElementById("box").classList.remove("heart");
+	document.getElementById("box").classList.remove("undefined");
+
+
+
+
+
+		box.classList.add(shape[Math.round(Math.random()*6)])
+		console.log(box.className)
+		console.log(box.style.left=event.clientX-50+"px",
+		box.style.top=event.clientY-50+"px")
+				
+
+
+			console.log(event.clientX,event.clientY)
+		box.style.left = event.clientX-50+"px"
+		box.style.top = event.clientY-50+"px"
+		if(box.className=="triangle"){
+		box.style.borderBottomColor=color[Math.round(Math.random()*14)];
+		box.style.background="#ff000000";
+		}
+		if(box.className=="heart"){
+		box.style.background=color[Math.round(Math.random()*14)]
+		}
+		if(box.className!="heart"&&box.className!="triangle"){
+		box.style.backgroundColor=color[Math.round(Math.random()*14)]
+	}
+
+		
+
+	})
+	document.addEventListener("keydown", function press(event){
+		console.log(event)
+		if (event.key=='b'){
+			box.style.backgroundColor="purple"
+		}
+	document.addEventListener("keyup",function release(event){
+		if (event.key=='b'){
+			box.style.backgroundColor="cadetblue"
+		}
+
+	})
+
+	})
+
+</script>
+</body>
+</html>
