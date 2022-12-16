@@ -103,8 +103,54 @@
 		margin:0px;
 		}
 	#newyear{
-		background-color:blue;
+	background-color: rgb(226,0,0)
 	}
+	#title1{
+	font-size:3.5em;
+	font-family: 'Rampart One', cursive;
+
+	}
+	#fuji{
+		background-image: url("https://img.traveltriangle.com/blog/wp-content/uploads/2018/11/New-Year-Japanese-cover.jpg");
+			background-size: cover;
+			background-position: center;
+			z-index:5;
+			width:800px;
+			height:500px;
+			border:10px solid rgb(225,150,150);
+			position:absolute;
+			left:8vw;
+			top:20vh;
+;
+	}
+	#leadingtext{
+	font-size:2.1em;
+	font-family: 'Rampart One', cursive;
+	position: absolute;
+	left:25vw;
+	top:90vh;
+
+
+	}
+	.arrow{
+		background-image: url(arrow.png);
+		width:69px;
+		height:100px;
+		background-size: cover;
+		background-position: center;
+		position:absolute;
+		z-index: 5;
+	}
+	#arrow1{
+	top:85vh;
+	left:3vw;
+
+	}
+	#arrow2{
+		top:85vh;
+		left:66vw;
+	}
+
 	@media only screen and (max-width: 600px){
 		section{
 			height:100vh;
@@ -122,7 +168,7 @@
 			padding-top:5.5px;
 
     		top: 6.5%;
-    		left: 13vw;
+    		left: 15vw;
 		}
 		#christmas{
 			background-color:rgb(150, 0, 0,0.85);
@@ -147,20 +193,64 @@
 			height:22vh;
 			width:22vw;
 			left:60vw;
-			top:75vh;
+			top:77vh;
 		}
 		#presentblue{
-			height:28vh;
+			height:25vh;
 			width:20vw;
-			left:20vw;
-			top:69vh;
+			
+			left:40vw;
+			top:73vh;
 			
 		}
 		#presentorange{
 			width:17vw;
 			height:17vh;
-			left:40vw;
+			left:20vw;
 			top:79vh;
+
+		}
+		#title1{
+			font-size: 1.9em;
+		}
+		#fuji{
+			width:89vw;
+			height:40vh;
+			left:-8.5vw;
+			position:absolute;
+			background-image: url("https://img.traveltriangle.com/blog/wp-content/uploads/2018/11/New-Year-Japanese-cover.jpg");
+			background-size: cover;
+			background-position: center;
+			z-index:5;
+			border: 7px solid rgb(225,150,150);
+;
+;
+		}
+		#leadingtext{
+			font-size: 1.6em;
+			position: absolute;
+			left:10vw;
+			top:70vh;
+
+		}
+		.arrow{
+
+		width:29vw;
+		height:20vh;
+	
+
+
+		z-index: 5;
+	}
+		#arrow1{
+
+		top:79vh;
+		left:24vw;
+		}
+		#arrow2{
+		opacity: 0;
+		top:79vh;
+		left:24vw;
 
 		}
 
@@ -186,6 +276,11 @@
 
 <div id='newyear' class='section-container'>
 	<section>
+		<center><h1 id="title1">新年明けましておめでとうございます!</h1></center>
+		<div id="fuji"></div>
+		<div class="arrow" id="arrow1"></div>
+		<div id="leadingtext">この一年あったこと...</div>
+		<div class="arrow" id="arrow2"></div>
 
 
 	</section>
@@ -231,13 +326,14 @@ santa.addEventListener("click", function santaplaymusic(event){
 	if(presentvisible==1 && santacounter%2==0){
 		music.pause()
 	}
-newyear.addEventListener('touchstart',function(){
-	newyear.style.backgroundColor='green'
+})
+newyear.addEventListener('click',function b(){
+	// newyear.style.backgroundColor='green'
 })
 
 
 
-})
+
 </script>
 </body>
 </html>
