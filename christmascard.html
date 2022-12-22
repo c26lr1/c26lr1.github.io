@@ -244,6 +244,32 @@
 		background-repeat: no-repeat;
 
 	}
+	#specificballoon7{
+		opacity:0;
+		height:1px;
+		position: absolute;
+		width: 1px;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+
+	}
+	#specificballoon8{
+		opacity:0;
+		height:1px;
+		position: absolute;
+		width: 1px;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+
+	}
+	#firstbutton{
+		opacity:0;
+	}
+	#secondbutton{
+		opacity:0;
+	}
 	#summer{
 		background-color: yellow;
 	}
@@ -261,11 +287,11 @@
 			left:-3vw;
 		}
 		#description{
-			font-size:1.3em;
+			font-size:1.1em;
 			padding-top:5.5px;
 
     		top: 6.5%;
-    		left: 15vw;
+    		left: 10vw;
 		}
 		#christmas{
 			background-color:rgb(150, 0, 0,0.85);
@@ -327,7 +353,7 @@
 		#leadingtext{
 			font-size: 1.6em;
 			position: absolute;
-			left:10vw;
+			left:6vw;
 			top:70vh;
 
 		}
@@ -440,7 +466,7 @@
 		height:170px;
 		position: absolute;
 		width: 100px;
-		background-image:url(bol4.png);
+		background-image:url(bol5.png);
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -453,17 +479,58 @@
 		height:170px;
 		position: absolute;
 		width: 100px;
-		background-image:url(bol4.png);
+		background-image:url(bol6.png);
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;
 		top:71vh;
 		left:13vw;
+	}
+	#specificballoon7{
+		opacity:0;
+		height:170px;
+		position: absolute;
+		width: 100px;
+		background-image:url(bol7.png);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		top:37vh;
+		left:-15vw;
+	}
+	#specificballoon8{
+		opacity:0;
+		height:170px;
+		position: absolute;
+		width: 100px;
+		background-image:url(bol8.png);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		top:37vh;
+		left:62vw;
+	}
+	#firstbutton{
+	font-family: 'Rampart One', cursive;
+	background-color:#D2B48C;
+	position: absolute;
+	left:21vw;
+	top:10.5vh;
+
 
 	}
+	#secondbutton{
+	font-family: 'Rampart One', cursive;
+	background-color:#D2B48C;
+	position: absolute;
+	left:27vw;
+	top:14vh;
 
 
 	}
+	}
+
+	
 	</style>
 </head>
 <body>
@@ -472,7 +539,7 @@
 <div id='christmas' class='section-container'>
 <section>
 	<center><h1 id='title'>メリークリスマス!</h1></center>
-	<center><div id='description'>ばあばに、涼央から</div></center>
+	<center><div id='description'>ばあばに、涼央から (2022)</div></center>
 	<img id="christmastree" src="christmastree.gif">
 	<img id='santa' src="santa.png">
 	<img id='presentred' src="presentred.png">
@@ -497,13 +564,17 @@
 	<section>
 	<center><h1 id="title2">ばあば、76歳のたん生日おめでとうございます!</h1></center>
 <div id="birthdaypic"></div>
-<!-- <div class="balloon"></div> -->
+<button id="firstbutton">風船かくす/みせる</button>
+<button id="secondbutton">風船かえる</button>
+
 <div id="specificballoon1"></div>
 <div id="specificballoon2"></div> 
 <div id="specificballoon3"></div> 
 <div id="specificballoon4"></div> 
 <div id="specificballoon5"></div> 
-<div id="specificballoon6"></div> 
+<div id="specificballoon6"></div>
+<div id="specificballoon7"></div> 
+<div id="specificballoon8"></div>  
 
 
 
@@ -527,28 +598,62 @@ let santavisible=0;
 let presentvisible=0;
 let counter=0;
 let fujicounter=0;
+let showhidecounter=0;
 
 var img=["url(bol1.png)","url(bol2.png)","url(bol3.png)","url(bol4.png","url(bol5.png)","url(bol6.png","url(bol7.png)","url(bol8.png","url(bol9.png)"]
-
-birthday.addEventListener("click", function changeBalloonImg(event){
+firstbutton.addEventListener("click", function showHide(event){
+	showhidecounter=showhidecounter+1;
+	if (showhidecounter%2==0){
+	specificballoon1.style.opacity="0";
+	specificballoon2.style.opacity="0";
+	specificballoon3.style.opacity="";
+	specificballoon4.style.opacity="0";
+	specificballoon5.style.opacity="0";
+	specificballoon6.style.opacity="0";
+	specificballoon7.style.opacity="0";
+	specificballoon8.style.opacity="0";
+	}
+	if(showhidecounter%2!=0){
 	specificballoon1.style.opacity="1";
 	specificballoon2.style.opacity="1";
 	specificballoon3.style.opacity="1";
 	specificballoon4.style.opacity="1";
 	specificballoon5.style.opacity="1";
 	specificballoon6.style.opacity="1";
+	specificballoon7.style.opacity="1";
+	specificballoon8.style.opacity="1";
+
+	}
+
+})
+secondbutton.addEventListener("click", function changeBalloonImg(event){
+	if (showhidecounter%2!=0){
+	specificballoon1.style.opacity="1";
+	specificballoon2.style.opacity="1";
+	specificballoon3.style.opacity="1";
+	specificballoon4.style.opacity="1";
+	specificballoon5.style.opacity="1";
+	specificballoon6.style.opacity="1";
+	specificballoon7.style.opacity="1";
+	specificballoon8.style.opacity="1";
 	specificballoon1.style.backgroundImage=img[Math.round(Math.random()*9)]
 	specificballoon2.style.backgroundImage=img[Math.round(Math.random()*9)]
 	specificballoon3.style.backgroundImage=img[Math.round(Math.random()*9)]
 	specificballoon4.style.backgroundImage=img[Math.round(Math.random()*9)]
 	specificballoon5.style.backgroundImage=img[Math.round(Math.random()*9)]
 	specificballoon6.style.backgroundImage=img[Math.round(Math.random()*9)]
+	specificballoon7.style.backgroundImage=img[Math.round(Math.random()*9)]
+	specificballoon8.style.backgroundImage=img[Math.round(Math.random()*9)]
+}
+
+
 
 
 
 
 
 })
+
 document.addEventListener("click",function cordinate(event){
 	console.log(event.clientX,event.clientY)
 	var x= event.clientX;
