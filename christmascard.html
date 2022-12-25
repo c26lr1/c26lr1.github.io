@@ -271,8 +271,53 @@
 		opacity:0;
 	}
 	#summer{
-		background-color: yellow;
+		background-color:rgb(260,260,80);
 	}
+	#title3{
+	font-size:3em;
+	font-family: 'Rampart One', cursive;
+	position: absolute;	
+	left:16vw;
+	color: #FF5E01;
+	position: absolute;
+	top:0vh;
+	}
+	#pictureslot{
+		position: absolute;
+		width:50vw;
+		height: 70vh;
+		border:solid black 2px;
+		top:20vh;
+		left:-10vw;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+
+	}
+	#descriptionslot{
+		position: absolute;
+		width:34vw;
+		height: 35vh;
+		border:solid black 2px;
+		top:55vh;
+		left:45vw;
+		font-size:2.3em;
+
+	}
+	#sunflower1{
+		position: absolute;
+		background-image: url("sunflower.png");
+		background-size: cover;
+		background-position: center;
+		width:25vw;
+		height:48vh ;
+		background-repeat: no-repeat;
+		top:7vh;
+		left:60vw;
+
+	}
+
 
 	@media only screen and (max-width: 600px){
 		section{
@@ -530,6 +575,31 @@
 
 
 	}
+	#title3{
+		font-size: 2em;
+		left:10vw;
+	}
+	#pictureslot{
+		height:30vh;
+		width: 90vw;
+		left:-8vw;
+	}
+	#sunflower1{
+		height:31vh;
+		width:68vw;
+		left:3vw;
+		top:71vh;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	#descriptionslot{
+		font-size: 1.7em;
+		height:15vh;
+		width:90vw;
+		left:-8vw;
+
+	}
 	}
 
 	
@@ -544,7 +614,7 @@
 	<center><div id='description'>ばあばに、涼央から (2022)</div></center>
 	<img id="christmastree" src="christmastree.gif">
 	<img id='santa' src="santa.png">
-	<img id='presentred' src="presentred.png">
+	<a href="#summer"><img id='presentred' src="presentred.png"></a>
 	<a href='#newyear'><img id='presentorange' src="presentorange.png"></a>
 	<a href='#birthday'><img id='presentblue' src="presentblue.png"></a>
 </section>
@@ -587,6 +657,10 @@
 </div> 
 <div id="summer" class='section-container'>
 	<section>
+	<h1 id="title3">夏日本に帰った時の思い出！</h1>
+	<div id="pictureslot"></div>
+	<div id="descriptionslot"></div>
+	<div id="sunflower1"></div>
 		
 
 	</section>
@@ -601,6 +675,21 @@ let presentvisible=0;
 let counter=0;
 let fujicounter=0;
 let showhidecounter=0;
+let picturevariable=0;
+var explanation=["日本でさいごの日に食べたケーキ。ばあばとママの写真です。","日本でさいごの日に食べたケーキ。ばあばとママの写真です。","オランジケーキ、チョコケーキ、キウイケーキ　と　二つ　ベリー　ケーキ。","ばあばと二人で肉じゃが作った時。","僕、ばあば、と　ママの　写真。","初めてGowdyのけーきを食べた。","ばあばとお姉ちゃん。","ばあばとお姉ちゃん。","ばあばがお姉ちゃんのゆかたをきせてるところ。","僕とばあばが一緒にこうらくえんに行った時。","こうらくえんに行くみち。","こうらくえんに行くみち。","お姉ちゃんがきものきる前のかみかざりとおけしょう。","お姉ちゃんがきものきる前のかみかざりとおけしょう。","ぼくが新しいゆかたをきてるすがた。","ばあばと一緒にデパートでパフェ食べた時。","ばあばと一緒にデパートでパフェ食べた時。","大阪にあったじぶりのみせ。"	,"大阪のホテルのまどからの景色。","大阪のホテルのまどからの景色。","あかずきんちゃんーーーばあばバージョン","大阪のほてるのロビーでばあばとママの写真。","こうらくえんのきれいなライト。"]
+
+var pic=["url(pic1.jpg)","url(pic2.jpg)","url(pic3.jpg)","url(pic4.jpg)","url(pic5.jpg)","url(pic6.jpg)","url(pic7.jpg)","url(pic8.jpg)","url(pic9.jpg)","url(pic10.jpg)","url(pic11.jpg)","url(pic12.jpg)","url(pic13.jpg)","url(pic14.jpg)","url(pic15.jpg)","url(pic16.jpg)","url(pic17.jpg)","url(pic18.jpg)","url(pic19.jpg)","url(pic20.jpg)","url(pic21.jpg)","url(pic22.jpg)","url(pic23.jpg)"]
+const dslot = document.getElementById("descriptionslot")
+pictureslot.addEventListener("click",function changePicture(event){
+ 
+if (picturevariable==23){
+	picturevariable=0;
+}
+pictureslot.style.backgroundImage=pic[picturevariable]
+dslot.textContent=explanation[picturevariable]
+picturevariable=picturevariable+1
+
+})
 
 var img=["url(bol1.png)","url(bol2.png)","url(bol3.png)","url(bol4.png","url(bol5.png)","url(bol6.png","url(bol7.png)","url(bol8.png","url(bol9.png)"]
 firstbutton.addEventListener("click", function showHide(event){
