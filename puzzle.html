@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+	<title></title>
+	<style>
+		.boxes{
+			position:absolute;
+			width:150px;
+			height:150px;
+			border:1px solid black;
+			background-size:cover;
+			background-position: center;
+
+
+		}
+		
+		.containerboxes{
+			position:relative;
+			height:150px;
+			width:150px;
+			border: dotted grey 0.5px;
+
+			margin:0px;
+			margin-bottom:0px;
+						display:flex;
+
+			padding:0px;
+		}
+		#container{
+/*			font-size:0px;*/
+			position:absolute;
+			height:450px;
+			width:605px;
+			top:10vh;
+			border:solid black 2px;
+			left:30vw;
+		}
+
+		cursor{
+
+		}
+	</style>
+</head>
+<body>
+
+<center style="font-family: 'Abel', sans-serif; font-size:40px;color:#8B0000 ;">Welcome! Complete the Puzzle! Open this
+		<a href="fullpic.html"> Referenece</a> in a new tab
+	</center>
+<div id= "container"></div>
+
+
+<script type="text/javascript">
+
+var outlineSquare;
+ var imageSquare;
+ var square;
+var carrying= "none"
+function makeSquareContained (x){
+	var square = document.createElement("div");
+			container.appendChild(square);
+			square.classList.add("containerboxes");
+			
+			square.id = "box"+x;
+			square.style.display="inline-block";
+			
+			square.style.opacity="1"
+			square.style.zIndex="5"
+			square.outlineSquare = x;
+
+	square.addEventListener("click",function(){
+		if (carrying=="picture"+square.id){
+			// console.log(carrying)
+			var whatever = document.getElementById(carrying);
+			console.log(whatever)
+			square.appendChild(whatever)
+			whatever.style.position = "relative";
+			whatever.style.top="0px";
+			whatever.style.left="0px";
+			// document.removeEventListener("mousemove", move)
+
+			// console.log(square)
+			// whatever.removeEventListener('mousemove', move)
+		}
+
+	})
+}
+for (var i=0; i<12; i=i+1){
+	makeSquareContained(i)}
+var counter = 0;
+var square;
+
+
+
+function makeSquare(x){
+			var square = document.createElement("div");
+			document.body.appendChild(square);
+			square.classList.add("boxes");
+			square.style.left = Math.random()*1000+"px";
+			square.style.top = Math.random()*500+"px";
+			square.style.zIndex="6"
+
+			square.id = "picture"+"box"+x;
+			square.style.backgroundImage=
+			'url(piece'+(x+1)+'.png)'
+			console.log(square.id)
+			square.imageSquare = x;
+
+			function move (event){
+			square.style.left = event.clientX-200+"px";
+			square.style.transition="0.6s"
+			square.style.top = event.clientY+20+"px";
+			}
+
+			
+			square.addEventListener("click", function(){
+
+				counter=counter+1;
+				if (counter%2==1){
+					document.addEventListener("mousemove", move)
+					carrying=square.id
+
+				 } //end of if statement
+
+				else if (counter%2==0){
+					carrying=0
+					document.removeEventListener("mousemove", move)//end of remove event listener//
+					carrying="none"
+			
+
+			}// end of else statement//
+
+
+
+		}) // end of click event listener
+
+		
+		
+
+
+
+		} // end of function//
+
+
+for(var i=0; i<12; i=i+1){
+	makeSquare(i)
+}
+
+
+
+</script>
+</body>
+</html>

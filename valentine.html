@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Dancing+Script:wght@700&family=Rampart+One&display=swap" rel="stylesheet">
+	<title></title>
+	<style>
+	#crush{
+	height:100px;
+	width:300px;
+	background-repeat:no-repeat;
+	background-image:url(crush.png);
+	background-size: contain;
+	position:absolute;
+	top:50vh;
+	left:10vw;
+	transform:scaleY(5.7);
+	font-family: 'Dancing Script', cursive;
+z-index: 2;
+
+}
+#fixme{
+font-family: 'Dancing Script', cursive;
+color:darkblue;
+border:soli;
+width:200px;
+height:70px;
+z-index: 1;
+font-size: 3.4em;
+border:solid darkblue 1px;
+text-align: center;
+position: absolute;
+top:50vh;
+left:13.5vw;
+
+
+
+}
+#hammer{
+	height:250px;
+	width:150px;
+	position:absolute;
+	background-image: url(hammer.png);
+	left:70vw;
+	transform: rotate(-45deg);
+	z-index: 3;
+
+
+}
+
+body{
+	background-color: #FFC0CB;
+	width:100vw;
+	height:100vh;
+
+}
+#title{
+	color: red ;
+	font-size:5em;
+font-family: 'Dancing Script', cursive;
+}
+
+	</style>
+</head>
+<body>
+
+<center><div id="title">Happy Valentines Day!</div></center>
+<div id="crush"></div>
+<div id=fixme>Fix Me!</div>
+<div id="hammer"></div>
+
+
+
+<script type="text/javascript">
+
+	var counter=0;
+	var carrying=0;
+	var scale=1;
+	var x=0.783;
+
+
+
+
+function move (event){
+			hammer.style.left = event.clientX+45+"px";
+			hammer.style.top = event.clientY-100+"px";
+			hammer.style.transition="0.5s"
+			}
+	hammer.addEventListener("click", function click(event){
+		counter=counter+1
+		if(counter%2==1){
+			document.addEventListener("mousemove", move)	
+			carrying=1;		
+		}
+		if(counter%2==0){
+			document.removeEventListener("mousemove",move)
+			carrying=0;
+		}
+
+	})
+	crush.addEventListener("click", function sayStuff(event){
+		if(carrying==0 && scale==1){
+			alert("Hint: Use the hammer and click on the box. Once you're done, put down the hammer and click the box for a surprise!")
+		}
+		if(carrying==0 && scale==0){
+			alert("Congrats, you CRUSHED IT!")
+			document.body.style.backgroundImage="url(https://cdn.dribbble.com/users/1266576/screenshots/6378250/fireworks_heart.gif)"
+		}
+		if (carrying==1&& scale==1){
+			crush.style.transform="scaleY("+(5.7-x)+")"
+			x=0.783+x;
+			if((5-x)<=1){
+			scale=0;
+					}
+
+		}
+	})
+	crush.addEventListener("mouseover", function showStuff(event){
+		if(carrying==0 &&scale==1){
+			crush.style.backgroundImage="url(-)"
+		
+
+		}
+	})
+	crush.addEventListener("mouseout", function showStuff(event){
+		if(carrying==0 &&scale==1){
+			crush.style.backgroundImage="url(crush.png)"
+
+		}
+	})
+
+
+</script>
+</body>
+</html>

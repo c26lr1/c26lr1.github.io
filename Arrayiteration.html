@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title></title>
+	<style type="text/css">
+		.box{
+			display: inline-block;
+			height:150px;
+			width: 150px;
+			margin:10px;
+			border:solid darkcyan 2px;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+
+	 function makeSquare (i) {
+
+            var square = document.createElement('div');
+                        document.body.appendChild(square);
+                        square.classList.add("box")
+
+            square.style.backgroundPosition = "center";
+            square.id="square"+i;
+
+        }
+
+        for (var i=0; i<32; i=i+2){
+                makeSquare(i)
+            }
+
+  var allSquares=document.getElementsByClassName("box")
+console.log(allSquares)
+var list=[]
+function turnPurple(i){
+var whatever= document.getElementsByClassName("box")
+whatever[i].style.backgroundColor="yellow";
+list.push(whatever[i])
+}
+for(var i=0; i<(allSquares.length); i=i+1){
+	turnPurple(i)
+	
+}
+console.log(list)
+</script>
+</body>
+</html>
