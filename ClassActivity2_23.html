@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style>
+		
+
+		#buggy{ 
+			width:100px;
+			height:100px;
+			background-color:blue;
+			left:5px;
+			top:5px;
+			position:absolute;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="buggy"></div>
+
+	<script type="text/javascript">
+		// buggy.style.left = "0px";
+
+		//  var x = parseInt(buggy.style.left);  //Retrive only an integer value, excluding the "px" and setting that to a variable. This variable represents the div's position 
+
+		// document.addEventListener("keydown", function(event){
+		// 	console.log(x)
+		// 	x = x+10; //variable increases for every keydown 
+
+		// 	buggy.style.left = x +"px"; //since variable increases, the div's position also increases 
+
+		// })
+let x= 5
+let y=5
+		document.addEventListener("keydown", function(event){
+			console.log(event.key)
+			if(event.key=="ArrowRight"){
+				x=x+30
+				buggy.style.left=x+"px"
+			}
+			else if(event.key=="ArrowLeft"){
+				x=x-30
+				buggy.style.left=x+"px"
+			}
+			else if(event.key=="ArrowUp"){
+				y=y-30
+				buggy.style.top=y+"px"
+			}
+			else if(event.key=="ArrowDown"){
+				y=y+30
+				buggy.style.top=y+"px"
+			}
+		})
+
+
+	</script>
+
+</body>
+</html>

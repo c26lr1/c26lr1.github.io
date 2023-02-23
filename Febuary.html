@@ -11,6 +11,7 @@
 	
 		#text{
 			font-size: 15px;
+			color:white;
 
 
 
@@ -21,6 +22,14 @@
 
 
 		}
+		#code{
+			color:rebeccapurple;
+			font-size: 30px;
+		}
+		#comment{
+			color:darkgray;
+			font-size: 20px;
+		}
 
 	</style>
 </head>
@@ -29,6 +38,32 @@
 <h1><span id="Title"><center><strong>Febuary</strong></center></span></h1>
 <h3><stong>Feb 16th 2022</stong></h3>
 <p><span id="text">I recently finished my Valentines mini-project. I made it sort of problem-solvey and it was fun to do and make!</span></p>
+<h3><stong>Feb 23rd 2022</stong></h3>
+<p><span id="text">In Class Activity: 
+	<ol id="text">Create div</ol>
+	<ol id="text">Style Div</ol>
+	<ol id="text">Add an eventlistener for a keypress</ol>
+	<ol id="text">If statement for the keypress of the button you want</ol>
+	<ol id="text">For each keypress, increase div's position by an interval</ol>
+	<br><br>
+
+<span id="text">Here is the annotated code:</span>
+<br>
+	<span id="code">buggy.style.left = "0px";
+<br>
+		 var x = parseInt(buggy.style.left);</span>  
+		
+		 <span id="comment">Retrive only an integer value, excluding the "px" and setting that to a variable. This variable represents the div's position. </span>
+<span id="code">
+		document.addEventListener("keydown", function(event){
+			console.log(x)
+			<br>
+			x = x+10; </span><span id="comment">variable increases for every keydown </span>
+<br>
+			<span id="code">buggy.style.left = x +"px"; </span> <span id="comment">Since the variable increases, the div's position also increases/goes to the left more. </span>
+<br>
+		<span id="code">})</span>
+</span></p>
 
 </body>
 </html>
