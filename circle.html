@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title></title>
+	<style type="text/css">
+	
+		.class1{
+			height:4px;
+			width: 4px;
+			border-radius: 50%;
+
+
+		}
+		.class2{
+			height:6px;
+			width: 6px;
+			border-radius: 50%;
+
+		}
+		.class3{
+			height:12px;
+			width:12px;
+			border-radius: 50%;
+
+		}
+		.class4{
+			height:18px;
+			width: 18px;
+			border-radius: 50%;
+
+		}
+	</style>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	function makeCircles(){
+		var thing = document.createElement("div");
+		document.body.appendChild(thing);
+
+		thing.classList.add("class"+Math.round(Math.random()*4))
+		thing.style.backgroundColor="black"
+		thing.style.position="absolute"
+		thing.style.left = "0px";
+		thing.style.top = "0px";
+		document.addEventListener("mousemove", function moveCircles(event){
+			
+
+		})
+
+	}
+for (var i=0; i<50; i=i+1){
+	makeCircles()}
+
+</script>
+</body>
+</html>

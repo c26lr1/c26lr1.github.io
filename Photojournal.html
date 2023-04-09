@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="x-icon" href="photojournal.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Dancing+Script:wght@700&family=Rampart+One&family=Shantell+Sans:wght@300&family=Yeseva+One&display=swap" rel="stylesheet">
+
+	<title>My Photojournal</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+		}
+		
+		section{
+			height:600px;
+			width:80%;
+			margin: 0px;
+			left:20%;
+			position: relative;
+			border:solid white 2px;
+			background-color: cadetblue;
+
+
+		}
+		#sidebar{
+			width:20%;
+			height:800px;
+			position:fixed;
+			background-color: cornflowerblue;
+			opacity:0.7;
+
+		}
+		
+		#text{
+			width:200px;
+			height:100px;
+			margin: 5px;
+			position:relative;
+			top:30px;
+			color:blueviolet;
+			font-size: 40px;
+			font-family: 'Yeseva One', cursive;
+
+		}
+		#calendar{
+			width:100%;
+			height:95px;
+			position: relative;
+			top:170px;
+			font-size: 30px;
+			font-family: 'Yeseva One', cursive;
+			color:darkslategrey;
+			transition: 1s;
+
+
+		}
+		#add{
+			width:100%;
+			height:95px;
+			position: relative;
+			top:300px;
+			font-size: 30px;
+			font-family: 'Yeseva One', cursive;
+			color: darkslategrey;
+			transition: 1s;
+
+		}
+
+
+
+
+	</style>
+
+
+</head>
+<body>
+
+<div id="sidebar">
+<center>
+	<div id="text">One Moment a Day</div>
+	<div id="calendar">Calendar</div>
+	<!-- <div id="add">Add Picture</div> -->
+	
+</center>
+</div>	
+
+
+<script type="text/javascript">
+
+//Creation Functions 
+function makeSections(x){
+	var sections = document.createElement("section");
+	document.body.appendChild(sections);
+
+}
+for(var i=1; i<366; i=i+10){
+	makeSections(i)
+}
+//Visual Functions
+	
+	sidebar.addEventListener("mouseover", function reveal(event){
+		sidebar.style.opacity="1"
+		sidebar.style.transition="1s"
+	})
+	sidebar.addEventListener("mouseout", function revert(event){
+		sidebar.style.opacity="0.8"
+		sidebar.style.transition="1s"
+	})
+	calendar.addEventListener("mouseover",function highlightone(){
+		calendar.style.backgroundColor="#4066E0"
+	})
+	calendar.addEventListener("mouseout",function unhighlightone(){
+		calendar.style.background="transparent"
+	})
+	add.addEventListener("mouseover",function highlighttwo(){
+		add.style.backgroundColor="#4066E0"
+	})
+	add.addEventListener("mouseout",function unhighlighttwo(){
+		add.style.backgroundColor="transparent"
+	})
+
+
+</script>
+</body>
+</html>

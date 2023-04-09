@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title></title>
+	<style>
+	.x{
+
+	}
+	.circle{
+
+	}
+	.nonzero{
+
+	}
+	.containerboxes{
+			position:relative;
+			height:150px;
+			width:150px;
+			border: dotted grey 0.5px;
+
+			margin:0px;
+			margin-bottom:0px;
+			display:flex;
+
+			padding:0px;
+		}
+		#container{
+/*			font-size:0px;*/
+			position:absolute;
+			height:460px;
+			width:455px;
+			top:10vh;
+			border:solid black 3px;
+			left:30vw;
+		}
+	</style>
+</head>
+<body>
+<center><h1>Welcome to my TicTacToe Game!</h1></center>
+<div id="container"></div>
+
+
+
+<script>
+
+	var swit;
+
+
+var person=0
+	function makeSquareContained (x){
+	var square = document.createElement("div");
+			container.appendChild(square);
+
+			
+			square.id = "box"+x;
+			square.style.display="inline-block";
+			
+			square.style.opacity="1"
+			square.style.zIndex="5"
+			
+			square.style.height= "150px"
+			square.style.width= "150px"
+			square.style.border= "dotted grey 0.5px"
+			square.style.margin= "0px"
+			square.style.marginBottom= "0px"
+			
+			square.style.padding= "0px"
+			square.style.display=="inline-block"
+
+
+
+			square.addEventListener("click",function assignPic(event){
+				if (square.classList=="nonzero"){
+
+				}
+
+				else{
+				person=person+1
+				square.classList.remove("even")
+				square.classList.remove("odd")
+				square.classList.add("nonzero")
+
+
+				if(person%2==0){
+					square.style.backgroundImage="url(x.png)"
+
+				}
+				if(person%2==1){
+					square.style.backgroundImage="url(o.png)"
+					
+
+
+
+				}
+			}
+				
+			})
+	
+}
+
+for (var i=1; i<10; i=i+1){
+	makeSquareContained(i)}
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
