@@ -8,19 +8,117 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/league.css">
+		<link rel="stylesheet" href="dist/theme/moon.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
+	<style type="text/css">
+		#text{
+			z-index:10;
+			position: absolute;
+			left:35%;
+			top:230px;
+		}
+		#background1{
+			height: 655px;
+			width: 655px;
+			background-image: url("sparkanimation.gif");
+			background-size: cover;
+			background-position: center;
+			border:1px solid cyan;
+			position: absolute;
+			top:10%;
+			left:15%;
+			opacity: 0.8;
+			opacity: 0;
+			transition: 3s;
+		}
+		#surrounding{
+			vertical-align: text-bottom;
+			width:350px;
+			height: 70px;
+			z-index:10;
+			position: absolute;
+			left:33%;
+			top:270px;
+			background-color: #002b36;
+		}
+		.fragment.color{
+			color: darkcyan;
+		}
+		.fragment.color.visible{
+			color:#cc461b;
+
+		}
+		#violinimg{
+			border:solid cyan 1px;
+			height:500px;
+			width:300px;
+			padding-top: 30px;
+		}
+	</style>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-background-color="cornflowerblue">My name is Leo</section>
-				<section  data-background-color="lightgreen">I went to the park over the weekend</section>
-				<section data-background-image="./imgs/park.jpg"><span style="color:darkred; font-size: 50px;">It was nice.</span></section>
-				<section></section>
-			</div>
+				<section data-transition = "concave"><div id="background1"
+					data-auto-animate></div>
+					<div id="surrounding"><strong>Hi! My name is Leo</strong></div>	
+				</section>
+				<section>
+				<section data-transition = "convex"
+				data-background-iframe="https://c26lr1.github.io/index.html"
+				data-background-interactive
+				data-auto-animate>
+					<span style="color: #4a6741; z-index: 10;">
+					I like to Code! Here is my homepage!</span>
+					
+				</section>
+
+				<section data-trasition="slide"
+				data-background-iframe="https://c26lr1.github.io/Photojournal.html"
+				data-background-interactive
+				data-auto-animate>
+				<span style="color: white; z-index: 10;">
+					Here is a Photojournal I started recently!</span>
+
+					
+				</section>
+			</section>
+			<section>
+
+
+				<section data-transition="convex">
+					<p>
+				<span style="color: darkcyan; position: absolute;">I also really love music!</span>
+			</p>
+				<p class="fragment custom color" style="position: absolute; left:50%;top: 200px;" >I play the violin</p>
+				<div class="fragment fade-right" id="violinimg">
+					<video controls src="violinplaying.mp4"></video>
+
+				</div>
+				<p class ="fragment fade-up" style="color: #cc461b; position:absolute; top:460px;left:40%;">⬅A previous preformance</p>
+				</section >
+				
+				
+				<section >
+					<h4 style="position:absolute;left:15%;top:-100px ">Some of my Favorite Violin Concertos (Highly Recommend)</h4>
+					<ol>
+						<li style="color:#1d2791;"><strong>Prokofiev Violin Concerto 1 </strong><p class="fragment fade-left">-- Dream-like, Thrilling, Wistful, Grand</p></li>
+						<li style="color: #ffae42;"><Strong>Tchaikovsky Violin Concerto</Strong><p class="fragment fade-left">-- Romantic and Melancholic</p></li>
+						<li style="color: darkred;"> <strong>Bruch Violin Concerto</strong><p class="fragment fade-left">-- Powerful orchestra, Epic</p></li>
+
+					</ol>
+					
+
+				</section>
+				</section>
+				<section>
+					
+					<h1 >THANK YOU FOR WATCHING!</h1>
+				</section>
+
+
 		</div>
 
 		<script src="dist/reveal.js"></script>
@@ -37,6 +135,21 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+			Reveal.initialize({
+	autoPlayMedia: false
+})
+			background1.addEventListener("mouseover",function doStuff(event){
+				background1.style.transition="3.5s"
+				background1.style.opacity=1
+				surrounding.style.border="solid #78b9e6 2px"
+
+			})
+			background1.addEventListener("mouseout",function doMoreStuff(event){
+				background1.style.transition="2s"
+				background1.style.opacity=0
+				surrounding.style.border="solid black 0px"
+
+			})
 		</script>
 	</body>
 </html>

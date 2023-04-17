@@ -15,7 +15,7 @@
 		}
 		
 		section{
-			height:1500px;
+			height:1700px;
 			width:80%;
 			margin: 0px;
 			left:20%;
@@ -23,7 +23,7 @@
 			border:solid white 2px;
 			background-color: cadetblue;
 			text-align:center;
-			font-size:30px;
+			font-size:25px;
 		}
 		.January{
 
@@ -111,9 +111,19 @@
 			position: relative;
 			display: inline-table;
 			z-index: 3;
-			border: 1px solid black;
+			border: 1px solid lightgrey;
 			margin: 3px;
 			transition: 1s;
+			font-size:25px;
+			text-align: right;
+			margin-top: 5px;
+			padding: 3px;
+			
+			 -webkit-text-fill-color: black;
+  			-webkit-text-stroke: 1px;
+  			   -webkit-text-stroke-color: white;
+
+
 
 
 
@@ -147,9 +157,34 @@
 
 		}
 		#april12{
+			background-image: url("april12.jpg");
+			background-size: cover	;
+			background-position: center;
 
 		}
 		#april13{
+			background-image: url("april13.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april14{
+			background-image: url("april14.jpg");
+			background-size: cover	;
+			background-position: center;
+
+
+		}
+		#april15{
+			background-image: url("april15.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april16{
+			background-image: url("april16.jpg");
+			background-size: cover	;
+			background-position: center;
 
 		}
 
@@ -179,42 +214,43 @@ function makeSections(x){
 	document.body.appendChild(sections);
 	 sections.style.backgroundColor = "rgb(95,158,160)"
 	 if (x==0){
-	 	sections.innerText="January"
+	 	sections.innerHTML="January" + "<br>"
 		for (j=0; j<31;j=j+1){
 	 	var subimages= document.createElement("div");
 	 	subimages.classList.add("subimages")
+	 	subimages.innerText = j+1;
 
 	 	sections.appendChild(subimages)}
 	 	
 	 
 	 }
 	 if (x==1){
-	 	sections.innerText="Feburary"
+		sections.innerHTML="Feburary" + "<br>"	 	
 	 	for (j=0; j<28;j=j+1){
 	 	var subimages= document.createElement("div");
 	 		 	subimages.classList.add("subimages")
-
+	 		 	subimages.innerText = j+1;
 	 	sections.appendChild(subimages)}
 	 }
 	 if (x==2){
-	 	sections.innerText="March"
+	 	sections.innerHTML="March" + "<br>"
 	 	for (j=0; j<31;j=j+1){
 	 	var subimages= document.createElement("div");
 	 		 	subimages.classList.add("subimages")
-
+	 		 	subimages.innerText = j+1;
 	 	sections.appendChild(subimages)}
 	 }
 	 if (x==3){
-	 	sections.innerText="April"
+	 	sections.innerHTML="April" + "<br>"
 	 	for (j=0; j<30;j=j+1){
 	 	var counter=0;
-
 	 	var subimages= document.createElement("div");
 	 	
 	 	
 
 	 	subimages.id="april"+(j+1)
 	 	sections.appendChild(subimages)
+	 	subimages.innerText = j+1;
 	 	subimages.classList.add("subimages")
 
 	 	
@@ -225,68 +261,78 @@ function makeSections(x){
 	 	
 	 }
 	 if (x==4){
-	 	sections.innerText="May"
+	 	sections.innerHTML="May" + "<br>"
+
 	 	for (j=0; j<31;j=j+1){
 	 	var subimages= document.createElement("div");
+	 	subimages.id="may"+(j+1)
 	 	subimages.classList.add("subimages")
+	 	subimages.innerText = j+1;
 	 	sections.appendChild(subimages)
 	 }
 	 }
 	 if(x==5){
-		sections.innerText="June"
+		sections.innerHTML="June" + "<br>"
+
 		for (j=0; j<30;j=j+1){
 	 	var subimages= document.createElement("div");
+	 	subimages.id="june"+(j+1)
 	 		 	subimages.classList.add("subimages")
-
+	 		 	subimages.innerText = j+1;
 	 	sections.appendChild(subimages)}
 	 }
 
 	 if(x==6){
-		sections.innerText="July"
+		sections.innerHTML="July"+"<br>"
 		for (j=0; j<31;j=j+1){
 	 	var subimages= document.createElement("div");
+	 	subimages.id="july"+(j+1)
 	 		 	subimages.classList.add("subimages")
-
+	 		 	subimages.innerText = j+1;
 	 	sections.appendChild(subimages)}
 	 }
 	 if(x==7){
-		sections.innerText="August"
+		sections.innerHTML="August"+"<br>"
 		for (j=0; j<31;j=j+1){
 	 	var subimages= document.createElement("div");
+	 	subimages.id="august"+(j+1)
 	 		 	subimages.classList.add("subimages")
-
+	 		 	subimages.innerText = j+1;
 	 	sections.appendChild(subimages)}
 	 }
 	 if(x==8){
-		sections.innerText="September"
+		sections.innerHTML="Spetember"+"<br>"
 		for (j=0; j<30;j=j+1){
 	 	var subimages= document.createElement("div");
+	 	subimages.id="september"+(j+1)
 	 		 	subimages.classList.add("subimages")
 
 	 	sections.appendChild(subimages)}
 	 }
 	 if(x==9){
-		sections.innerText="October"
+		sections.innerHTML="October" + "<br>"
+
 		for (j=0; j<31;j=j+1){
 	 	var subimages= document.createElement("div");
+	 	subimages.id="october"+(j+1)
 	 		 	subimages.classList.add("subimages")
-
+	 		 	subimages.innerText = j+1;
 	 	sections.appendChild(subimages)}
 	 }
 	 if(x==10){
-		sections.innerText="November"
+		sections.innerHTML="November"+"<br>"
 		for (j=0; j<30;j=j+1){
 	 	var subimages= document.createElement("div");
 	 		 	subimages.classList.add("subimages")
-
+	 		 	subimages.innerText = j+1;
 	 	sections.appendChild(subimages)}
 	 }
 	 if(x==11){
-		sections.innerText="December"
+		sections.innerHTML="December"+"<br>"
 		for (j=0; j<31;j=j+1){
 	 	var subimages= document.createElement("div");
 	 		 	subimages.classList.add("subimages")
-
+	 		 	subimages.innerText = j+1;
 	 	sections.appendChild(subimages)}
 
 	 }
@@ -339,17 +385,20 @@ var numb=0;
 subimageclass.forEach(subimages => {
   subimages.addEventListener('click', function growBig(event) {
   	numb=numb+1
-  	if(numb%2==0){
+  	if(numb%2==1){
   		subimages.style.width="500px"
   		subimages.style.height="500px"
   		subimages.style.zIndex="5"
+  		subimages.style.fontSize="50px"
 
 
   	}
-  	if(numb%2==1){
+  	if(numb%2==0){
   		subimages.style.zIndex="3"
   		subimages.style.width="200px"
   		subimages.style.height="200px"
+  		subimages.style.fontSize="20px"
+
 
   	}
     console.log('subimage clicked', event);
