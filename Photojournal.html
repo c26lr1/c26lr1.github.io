@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="x-icon" href="Photojournal.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Dancing+Script:wght@700&family=Rampart+One&family=Shantell+Sans:wght@300&family=Yeseva+One&display=swap" rel="stylesheet">
+
+	<title>My Photojournal</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+		}
+		
+		section{
+			height:1700px;
+			width:80%;
+			margin: 0px;
+			left:20%;
+			position: relative;
+			border:solid white 2px;
+			background-color: cadetblue;
+			text-align:center;
+			font-size:25px;
+		}
+		.January{
+
+		}
+		.February{
+
+		}
+		.March{
+
+		}
+		.April{
+
+		}
+		.May{
+
+		}
+		.June{
+
+		}
+		.July{
+
+		}
+		.August{
+
+		}
+		.September{
+
+		}
+		.October{
+
+		}
+		.November{
+
+		}
+		.December{
+
+		}
+
+		#sidebar{
+			width:20%;
+			height:2000px;
+			position:fixed;
+			background-color: cornflowerblue;
+			opacity:0.7;
+
+		}
+		
+		#text{
+			width:200px;
+			height:100px;
+			margin: 5px;
+			position:relative;
+			top:30px;
+			color:blueviolet;
+			font-size: 40px;
+			font-family: 'Yeseva One', cursive;
+
+		}
+		#calendar{
+			width:100%;
+			height:95px;
+			position: relative;
+			top:170px;
+			font-size: 30px;
+			font-family: 'Yeseva One', cursive;
+			color:darkslategrey;
+			transition: 1s;
+
+
+		}
+		#add{
+			width:100%;
+			height:95px;
+			position: relative;
+			top:300px;
+			font-size: 30px;
+			font-family: 'Yeseva One', cursive;
+			color: darkslategrey;
+			transition: 1s;
+
+		}
+		.subimages{
+			width: 200px;
+			height:200px;
+			position: relative;
+			display: inline-table;
+			z-index: 3;
+			border: 1px solid lightgrey;
+			margin: 3px;
+			transition: 1s;
+			font-size:25px;
+			text-align: right;
+			margin-top: 5px;
+			padding: 3px;
+			
+			 -webkit-text-fill-color: black;
+  			-webkit-text-stroke: 1px;
+  			   -webkit-text-stroke-color: white;
+
+
+
+
+
+		}
+		.year2023{
+			border: 1px solid blue;
+
+		}
+		#april8{
+			background-image: url("april8.jpeg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april9{
+			background-image: url("april9.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april10{
+			background-image: url("april10.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april11{
+			background-image: url("april11.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april12{
+			background-image: url("april12.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april13{
+			background-image: url("april13.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april14{
+			background-image: url("april14.jpg");
+			background-size: cover	;
+			background-position: center;
+
+
+		}
+		#april15{
+			background-image: url("april15.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april16{
+			background-image: url("april16.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april17{
+			background-image: url("april17.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april18{
+			background-image: url("april18.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april19{
+			background-image: url("april19.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april20{
+			background-image: url("april20.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april21{
+			background-image: url("april21.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+		#april22{
+			background-image: url("april22.jpg");
+			background-size: cover	;
+			background-position: center;
+
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+
+<div id="sidebar">
+<center>
+	<div id="text">One Moment a Day</div>
+	<div id="calendar">Calendar</div>
+	<!-- <div id="add">Add Picture</div> -->
+	
+</center>
+</div>	
+
+
+<script type="text/javascript">
+
+//Creation Functions 
+function makeSections(x){
+
+	var sections = document.createElement("section");
+	document.body.appendChild(sections);
+	 sections.style.backgroundColor = "rgb(95,158,160)"
+	 if (x==0){
+	 	sections.innerHTML="January" + "<br>"
+		for (j=0; j<31;j=j+1){
+	 	var subimages= document.createElement("div");
+	 	subimages.classList.add("subimages")
+	 	subimages.innerText = j+1;
+
+	 	sections.appendChild(subimages)}
+	 	
+	 
+	 }
+	 if (x==1){
+		sections.innerHTML="Feburary" + "<br>"	 	
+	 	for (j=0; j<28;j=j+1){
+	 	var subimages= document.createElement("div");
+	 		 	subimages.classList.add("subimages")
+	 		 	subimages.innerText = j+1;
+	 	sections.appendChild(subimages)}
+	 }
+	 if (x==2){
+	 	sections.innerHTML="March" + "<br>"
+	 	for (j=0; j<31;j=j+1){
+	 	var subimages= document.createElement("div");
+	 		 	subimages.classList.add("subimages")
+	 		 	subimages.innerText = j+1;
+	 	sections.appendChild(subimages)}
+	 }
+	 if (x==3){
+	 	sections.innerHTML="April" + "<br>"
+	 	for (j=0; j<30;j=j+1){
+	 	var counter=0;
+	 	var subimages= document.createElement("div");
+	 	
+	 	
+
+	 	subimages.id="april"+(j+1)
+	 	sections.appendChild(subimages)
+	 	subimages.innerText = j+1;
+	 	subimages.classList.add("subimages")
+
+	 	
+	 	}
+	 	
+
+
+	 	
+	 }
+	 if (x==4){
+	 	sections.innerHTML="May" + "<br>"
+
+	 	for (j=0; j<31;j=j+1){
+	 	var subimages= document.createElement("div");
+	 	subimages.id="may"+(j+1)
+	 	subimages.classList.add("subimages")
+	 	subimages.innerText = j+1;
+	 	sections.appendChild(subimages)
+	 }
+	 }
+	 if(x==5){
+		sections.innerHTML="June" + "<br>"
+
+		for (j=0; j<30;j=j+1){
+	 	var subimages= document.createElement("div");
+	 	subimages.id="june"+(j+1)
+	 		 	subimages.classList.add("subimages")
+	 		 	subimages.innerText = j+1;
+	 	sections.appendChild(subimages)}
+	 }
+
+	 if(x==6){
+		sections.innerHTML="July"+"<br>"
+		for (j=0; j<31;j=j+1){
+	 	var subimages= document.createElement("div");
+	 	subimages.id="july"+(j+1)
+	 		 	subimages.classList.add("subimages")
+	 		 	subimages.innerText = j+1;
+	 	sections.appendChild(subimages)}
+	 }
+	 if(x==7){
+		sections.innerHTML="August"+"<br>"
+		for (j=0; j<31;j=j+1){
+	 	var subimages= document.createElement("div");
+	 	subimages.id="august"+(j+1)
+	 		 	subimages.classList.add("subimages")
+	 		 	subimages.innerText = j+1;
+	 	sections.appendChild(subimages)}
+	 }
+	 if(x==8){
+		sections.innerHTML="Spetember"+"<br>"
+		for (j=0; j<30;j=j+1){
+	 	var subimages= document.createElement("div");
+	 	subimages.id="september"+(j+1)
+	 		 	subimages.classList.add("subimages")
+
+	 	sections.appendChild(subimages)}
+	 }
+	 if(x==9){
+		sections.innerHTML="October" + "<br>"
+
+		for (j=0; j<31;j=j+1){
+	 	var subimages= document.createElement("div");
+	 	subimages.id="october"+(j+1)
+	 		 	subimages.classList.add("subimages")
+	 		 	subimages.innerText = j+1;
+	 	sections.appendChild(subimages)}
+	 }
+	 if(x==10){
+		sections.innerHTML="November"+"<br>"
+		for (j=0; j<30;j=j+1){
+	 	var subimages= document.createElement("div");
+	 		 	subimages.classList.add("subimages")
+	 		 	subimages.innerText = j+1;
+	 	sections.appendChild(subimages)}
+	 }
+	 if(x==11){
+		sections.innerHTML="December"+"<br>"
+		for (j=0; j<31;j=j+1){
+	 	var subimages= document.createElement("div");
+	 		 	subimages.classList.add("subimages")
+	 		 	subimages.innerText = j+1;
+	 	sections.appendChild(subimages)}
+
+	 }
+
+
+
+
+}
+for(var i=0; i<12; i=i+1){
+	makeSections(i)
+}
+// var counter=0
+// april9.addEventListener("click",function makeBigger(event){
+
+// 	 		counter=counter+1
+// 	 		if(counter%2==1){
+
+// 	 		april9.style.zIndex="5"
+// 	 		april9.style.height="500px"
+// 	 		april9.style.width="500px"
+// 	 		april9.style.transition="1s"
+// 	 	}
+// 	 		if (counter%2==0){
+// 	 			april9.style.zIndex="3"
+// 	 			april9.style.height="200px"
+// 	 			april9.style.width="200px"
+// 	 			april9.style.transition="1s"
+
+
+// 	 		}
+// 	 	})
+//Visual Functions
+	
+	sidebar.addEventListener("mouseover", function reveal(event){
+		sidebar.style.opacity="1"
+		sidebar.style.transition="1s"
+	})
+	sidebar.addEventListener("mouseout", function revert(event){
+		sidebar.style.opacity="0.8"
+		sidebar.style.transition="1s"
+	})
+	calendar.addEventListener("mouseover",function highlightone(){
+		calendar.style.backgroundColor="#4066E0"
+	})
+	calendar.addEventListener("mouseout",function unhighlightone(){
+		calendar.style.background="transparent"
+	})
+	const subimageclass = document.querySelectorAll('.subimages');
+var numb=0;
+subimageclass.forEach(subimages => {
+  subimages.addEventListener('click', function growBig(event) {
+  	numb=numb+1
+  	if(numb%2==1){
+  		subimages.style.width="500px"
+  		subimages.style.height="500px"
+  		subimages.style.zIndex="5"
+  		subimages.style.fontSize="50px"
+
+
+  	}
+  	if(numb%2==0){
+  		subimages.style.zIndex="3"
+  		subimages.style.width="200px"
+  		subimages.style.height="200px"
+  		subimages.style.fontSize="25px"
+
+
+  	}
+    console.log('subimage clicked', event);
+
+
+
+    
+  });
+});
+	
+	// add.addEventListener("mouseover",function highlighttwo(){
+	// 	add.style.backgroundColor="#4066E0"
+	// })
+	// add.addEventListener("mouseout",function unhighlighttwo(){
+	// 	add.style.backgroundColor="transparent"
+	// })
+
+
+</script>
+</body>
+</html>
